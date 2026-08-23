@@ -42,12 +42,12 @@
       "moby": "false",
       "version": "latest"
     },
-    "ghcr.io/awlsomealex/devcontainer-features/codex:0.1": {},
+    "ghcr.io/awlsomealex/devcontainer-features/codex:0.2": {},
     "ghcr.io/awlsomealex/devcontainer-features/lazygit:0.1": {}
   },
   "mounts": [
-    "source=${localEnv:HOME}/.codex,target=/home/vscode/.codex,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+    "source=codex-home,target=/home/vscode/.codex,type=volume"
   ],
   "containerUser": "vscode",
   "remoteUser": "vscode"

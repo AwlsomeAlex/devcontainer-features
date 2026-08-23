@@ -5,6 +5,7 @@ ARG DEVCONTAINER_CLI_VERSION=0.88.0
 # Install required packages: git + install script requirements
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && apt-get install -y --no-install-recommends \
+    bubblewrap \
     curl \
     ca-certificates \
     iptables \

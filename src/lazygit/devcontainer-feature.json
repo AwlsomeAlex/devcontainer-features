@@ -1,0 +1,17 @@
+{
+  "id": "lazygit",
+  "version": "0.1.0",
+  "name": "LazyGit",
+  "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/lazygit",
+  "description": "Installs the LazyGit terminal UI for Git.",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest"
+      ],
+      "default": "latest",
+      "description": "Select the LazyGit version to install."
+    }
+  }
+}

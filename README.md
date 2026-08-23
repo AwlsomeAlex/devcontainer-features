@@ -6,7 +6,7 @@ I plan on supporting at least Ubuntu 26.04 and Rocky Linux 10, along with amd64 
 
 ## Contents
 
-### `base`
+### WIP -- `base`
 
 Creates the expected `vscode` user, installs some commonly required packages like `ca-credentials`, `curl`, `zsh`, etc. and installs Oh-My-Zshrc. The username, whether OMZ, and which theme it uses is configurable. This is similar to `common-utils`. I will try my best not to make this a HARD dependency of my units to keep it supported with `common-utils`.
 
@@ -66,3 +66,16 @@ OR
     ]
 }
 ```
+
+### LazyGit
+
+Installs the LazyGit TUI for git (TUIs rock). There are no options other than specifying a version, otherwise it defaults to whatevers latest.
+
+```jsonc
+{
+    "image": "ubuntu:26.04",
+    "features": {
+        "ghcr.io/awlsomealex/devcontainer-features/lazygit:0.1": {}
+    }
+}
+````

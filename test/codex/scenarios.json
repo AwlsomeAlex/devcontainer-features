@@ -1,0 +1,26 @@
+{
+    "pinned-version": {
+        "image": "ubuntu:26.04",
+        "features": {
+            "codex": {
+                "version": "0.148.0"
+            }
+        }
+    },
+    "ubuntu-support": {
+        "image": "ubuntu:26.04",
+        "features": {
+            "codex": {
+                "version": "latest"
+            }
+        }
+    },
+    "rocky-support": {
+        "image": "rockylinux/rockylinux:10.2",
+        "features": {
+            "codex": {
+                "version": "latest"
+            }
+        }
+    }
+}

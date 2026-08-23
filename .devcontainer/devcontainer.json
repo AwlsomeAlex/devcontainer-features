@@ -1,25 +1,47 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "json.schemas": [
-                    {
-                        "fileMatch": [
-                            "*/devcontainer-feature.json"
-                        ],
-                        "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
-                    }
-                ]
-            },
-            "extensions": [
-                "mads-hartmann.bash-ide-vscode"
-            ]
-        }
-    },
-    "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-    },
-    "remoteUser": "node",
-    "updateContentCommand": "npm install -g @devcontainers/cli"
+  "name": "Awslome Devcontainer Features",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "telemetry.telemetryLevel": "off",
+        "workbench.enableExperiments": false,
+        "chat.disableAIFeatures": true,
+        "editor.formatOnSave": true,
+        "[json]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[shellscript]": {
+          "editor.defaultFormatter": "mkhl.shfmt",
+          "editor.formatOnSave": true
+        },
+        "json.schemas": [
+          {
+            "fileMatch": [
+              "**/devcontainer-feature.json"
+            ],
+            "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
+          }
+        ]
+      },
+      "extensions": [
+        "mads-hartmann.bash-ide-vscode",
+        "ms-azuretools.vscode-docker",
+        "timonwong.shellcheck",
+        "mkhl.shfmt"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4": {
+      "moby": "false"
+    }
+  },
+  "containerUser": "root",
+  "remoteUser": "vscode"
 }

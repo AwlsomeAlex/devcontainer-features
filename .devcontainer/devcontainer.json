@@ -39,9 +39,15 @@
   },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:4": {
-      "moby": "false"
-    }
+      "moby": "false",
+      "version": "latest"
+    },
+    "ghcr.io/awlsomealex/devcontainer-features/codex:0.1": {}
   },
-  "containerUser": "root",
+  "mounts": [
+    "source=${localEnv:HOME}/.codex,target=/home/vscode/.codex,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
+  "containerUser": "vscode",
   "remoteUser": "vscode"
 }

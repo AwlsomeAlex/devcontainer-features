@@ -7,9 +7,13 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && apt-get install -y --no-install-recommends \
     curl \
     ca-certificates \
+    iptables \
     jq \
+    openssh-client \
+    ripgrep \
     shellcheck \
     shfmt \
+    sudo \
     git \
     git-lfs \
     language-pack-en \
@@ -23,13 +27,16 @@ ENV LC_ALL=en_US.UTF-8
 
 # Ubuntu 26.04 reserves 1000:1000 UID:GID for 'ubuntu'
 # Rename it to keep a consistent 'vscode' user across devcontainer bases
+# TODO: Better 'sudo' handling
 RUN usermod \
     --login vscode \
     --home /home/vscode \
     --move-home \
     --shell /bin/zsh \
     ubuntu \
-    && groupmod --new-name vscode ubuntu
+    && groupmod --new-name vscode ubuntu \
+    && echo vscode ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/vscode \
+    && chmod 0440 /etc/sudoers.d/vscode
 
 # Install devcontainer-cli using install script
 RUN curl -fsSL https://raw.githubusercontent.com/devcontainers/cli/main/scripts/install.sh -o /tmp/install.sh \
@@ -52,5 +59,6 @@ prompt_context() {
 }
 EOF
 
-WORKDIR /home/vscode
+USER root
+
 CMD ["/bin/zsh"]

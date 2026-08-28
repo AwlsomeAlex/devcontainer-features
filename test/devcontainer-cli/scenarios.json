@@ -1,0 +1,16 @@
+{
+  "rocky-support": {
+    "image": "rockylinux/rockylinux:10.2",
+    "features": {
+      "devcontainer-cli": {}
+    }
+  },
+  "explicit-version": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "devcontainer-cli": {
+        "version": "0.88.0"
+      }
+    }
+  }
+}

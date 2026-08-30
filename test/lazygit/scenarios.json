@@ -14,7 +14,7 @@
         }
     },
     "rocky-support": {
-        "image": "rockylinux/rockylinux:10.2",
+        "image": "rockylinux/rockylinux:10",
         "features": {
             "lazygit": {
                 "version": "0.64.1"

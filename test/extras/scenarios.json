@@ -1,0 +1,22 @@
+{
+  "ubuntu-support": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "extras": {}
+    }
+  },
+  "shfmt-pinned": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "extras": {
+        "shfmt": "latest"
+      }
+    }
+  },
+  "rocky-support": {
+    "image": "rockylinux/rockylinux:10",
+    "features": {
+      "extras": {}
+    }
+  }
+}

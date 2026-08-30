@@ -1,0 +1,18 @@
+{
+  "id": "extras",
+  "version": "0.1.0",
+  "name": "Extras",
+  "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/extras",
+  "description": "Installs additional development tools: bubblewrap, iptables, ShellCheck, and shfmt.",
+  "options": {
+    "shfmt": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "3.11.0"
+      ],
+      "default": "latest",
+      "description": "Specify the shfmt version to install, or latest."
+    }
+  }
+}

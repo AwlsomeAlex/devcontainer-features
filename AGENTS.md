@@ -32,6 +32,8 @@ Feature tests belong under `test/<feature-name>/`:
 - `test.sh` contains the default checks.
 - Every named scenario in `scenarios.json` must have a matching `<scenario-name>.sh` test script. The Dev Container feature test runner does not automatically reuse `test.sh` for named scenarios.
 
+Do not add a `default` entry to `scenarios.json`. The Dev Container Features test runner generates the default scenario automatically from `test.sh`. An explicit `default` scenario makes the runner look for `default.sh` and causes the test suite to fail.
+
 Use explicit image tags in scenarios. Ubuntu support scenarios must use `ubuntu:26.04`; Rocky support scenarios use `rockylinux/rockylinux:10` to cover the supported RHEL 10 major version. Feature scenarios should cover both `amd64` and `arm64` when architecture-specific behavior is involved.
 
 ## Feature options and environment variables
@@ -44,6 +46,8 @@ Dev Container Feature option names are camelCase in `devcontainer-feature.json` 
 - `installOMZ` → `INSTALLOMZ`
 - `omzTheme` → `OMZTHEME`
 - `shfmt` → `SHFMT`
+- `opentofuVersion` → `OPENTOFUVERSION`
+- `terragruntVersion` → `TERRAGRUNTVERSION`
 
 Avoid generic variable collisions with sourced files. In particular, `/etc/os-release` defines `VERSION`; capture a feature option named `VERSION` into a feature-specific variable before sourcing `/etc/os-release`.
 
@@ -51,7 +55,7 @@ Validate user-provided values before using them in commands. Usernames should be
 
 ## Current feature responsibilities
 
-Whenever a new feature is added, update this section in the same change with a concise `TL;DR` describing what the feature installs or configures, its supported platforms, and any important options or prerequisites. Update the TL;DR whenever the feature's responsibilities materially change.
+Whenever a new feature is added, update this section and the project root `README.md` in the same change. Add a concise `TL;DR` to both files describing what the feature installs or configures, its supported platforms, and any important options or prerequisites. Keep both summaries current whenever the feature's responsibilities materially change.
 
 ### `base`
 
@@ -93,6 +97,12 @@ Extras installs:
 - `shfmt`
 
 The first three use the supported OS package managers. `shfmt` is not assumed to exist in EPEL and is installed from the upstream `mvdan/sh` release. Its `shfmt` option defaults to `latest`, resolves the current GitHub release tag, and supports only `amd64` and `arm64`.
+
+### `iac`
+
+**TL;DR:** Installs the latest or pinned OpenTofu and Terragrunt releases from GitHub into `/usr/local/bin`, recommends the HashiCorp HCL and OpenTofu VS Code extensions, and provides checksum verification with amd64/arm64 support on Ubuntu and Rocky/RHEL containers.
+
+IAC uses the `opentofuVersion` option for OpenTofu and `terragruntVersion` for Terragrunt; both default to `latest`. Release archives are selected by host architecture and verified against the tools' published SHA-256 checksums before installation.
 
 ## Testing expectations
 

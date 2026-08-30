@@ -1,0 +1,23 @@
+{
+  "ubuntu-support": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "iac": {}
+    }
+  },
+  "pinned-version": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "iac": {
+        "opentofuVersion": "1.12.6",
+        "terragruntVersion": "1.1.4"
+      }
+    }
+  },
+  "rocky-support": {
+    "image": "rockylinux/rockylinux:10",
+    "features": {
+      "iac": {}
+    }
+  }
+}

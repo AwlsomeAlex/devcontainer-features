@@ -6,7 +6,7 @@ I plan on supporting at least Ubuntu 26.04 and Rocky Linux 10, along with amd64 
 
 ## Contents
 
-### WIP -- `base`
+### `base`
 
 Creates the expected `vscode` user, installs some commonly required packages like `ca-credentials`, `curl`, `zsh`, etc. and installs Oh-My-Zshrc. The username, whether OMZ, and which theme it uses is configurable. This is similar to `common-utils`. I will try my best not to make this a HARD dependency of my units to keep it supported with `common-utils`.
 
@@ -67,6 +67,34 @@ OR
 }
 ```
 
+### Dev Container CLI
+
+Installs a configurable version of the Dev Container CLI into `/usr/local/bin` using the official installer.
+
+```jsonc
+{
+    "image": "ubuntu:26.04",
+    "features": {
+        "ghcr.io/awlsomealex/devcontainer-features/devcontainer-cli:0.1": {
+            "version": "latest"
+        }
+    }
+}
+```
+
+### Extras
+
+Installs `bubblewrap`, `iptables`, ShellCheck, and shfmt. It supports Ubuntu 26.04 and Rocky Linux 10 on amd64 and arm64 hosts.
+
+```jsonc
+{
+    "image": "ubuntu:26.04",
+    "features": {
+        "ghcr.io/awlsomealex/devcontainer-features/extras:0.1": {}
+    }
+}
+```
+
 ### LazyGit
 
 Installs the LazyGit TUI for git (TUIs rock). There are no options other than specifying a version, otherwise it defaults to whatevers latest.
@@ -78,4 +106,20 @@ Installs the LazyGit TUI for git (TUIs rock). There are no options other than sp
         "ghcr.io/awlsomealex/devcontainer-features/lazygit:0.1": {}
     }
 }
-````
+```
+
+### Infrastructure as Code
+
+Installs the latest or pinned OpenTofu and Terragrunt releases from GitHub into `/usr/local/bin`, and recommends the HashiCorp HCL and OpenTofu VS Code extensions. It supports Ubuntu 26.04 and Rocky Linux 10 on amd64 and arm64 hosts, and verifies downloaded releases with their published checksums.
+
+```jsonc
+{
+    "image": "ubuntu:26.04",
+    "features": {
+        "ghcr.io/awlsomealex/devcontainer-features/iac:0.1": {
+            "opentofuVersion": "latest",
+            "terragruntVersion": "latest"
+        }
+    }
+}
+```

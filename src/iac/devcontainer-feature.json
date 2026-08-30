@@ -1,0 +1,35 @@
+{
+  "id": "iac",
+  "version": "0.1.0",
+  "name": "Infrastructure as Code",
+  "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/iac",
+  "description": "Installs OpenTofu and Terragrunt from their official GitHub releases.",
+  "options": {
+    "opentofuVersion": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "1.12.6"
+      ],
+      "default": "latest",
+      "description": "Specify the OpenTofu version to install, or latest."
+    },
+    "terragruntVersion": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "1.1.4"
+      ],
+      "default": "latest",
+      "description": "Specify the Terragrunt version to install, or latest."
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.hcl",
+        "opentofu.vscode-opentofu"
+      ]
+    }
+  }
+}

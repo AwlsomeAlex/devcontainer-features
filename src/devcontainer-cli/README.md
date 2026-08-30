@@ -1,35 +1,24 @@
-# Dev Container CLI
 
-Installs the [Dev Container CLI](https://github.com/devcontainers/cli) using its official installer.
+# Dev Container CLI (devcontainer-cli)
 
-The CLI is installed into `/usr/local/bin` and is available as `devcontainer`.
+Installs the Dev Container CLI.
+
+## Example Usage
+
+```json
+"features": {
+    "ghcr.io/AwlsomeAlex/devcontainer-features/devcontainer-cli:0": {}
+}
+```
 
 ## Options
 
-### `version`
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| version | Specify the Dev Container CLI version to install. | string | latest |
 
-The Dev Container CLI version to install. The default is `latest`.
 
-## Example
 
-```json
-{
-  "features": {
-    "ghcr.io/awlsomealex/devcontainer-features/devcontainer-cli:0": {}
-  }
-}
-```
+---
 
-To install a specific version:
-
-```json
-{
-  "features": {
-    "ghcr.io/awlsomealex/devcontainer-features/devcontainer-cli:0": {
-      "version": "0.88.0"
-    }
-  }
-}
-```
-
-The feature supports Ubuntu/Debian-compatible images and RHEL-compatible images, including Rocky Linux. It installs `curl` and `ca-certificates` as prerequisites when needed.
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/AwlsomeAlex/devcontainer-features/blob/main/src/devcontainer-cli/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

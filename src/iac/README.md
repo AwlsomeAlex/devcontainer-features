@@ -1,42 +1,32 @@
-# Infrastructure as Code
 
-Installs [OpenTofu](https://opentofu.org/) and [Terragrunt](https://terragrunt.gruntwork.io/) from their official GitHub releases.
+# Infrastructure as Code (iac)
 
-The `tofu` and `terragrunt` executables are installed into `/usr/local/bin`.
+Installs OpenTofu and Terragrunt from their official GitHub releases.
 
-When used with VS Code, the feature also recommends the HashiCorp HCL and OpenTofu extensions.
+## Example Usage
+
+```json
+"features": {
+    "ghcr.io/AwlsomeAlex/devcontainer-features/iac:0": {}
+}
+```
 
 ## Options
 
-### `opentofuVersion`
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| opentofuVersion | Specify the OpenTofu version to install, or latest. | string | latest |
+| terragruntVersion | Specify the Terragrunt version to install, or latest. | string | latest |
 
-The OpenTofu version to install. The default is `latest`. Pinned versions such as `1.12.6` are supported.
+## Customizations
 
-### `terragruntVersion`
+### VS Code Extensions
 
-The Terragrunt version to install. The default is `latest`. Pinned versions such as `1.1.4` are supported.
+- `hashicorp.hcl`
+- `opentofu.vscode-opentofu`
 
-## Example
 
-```json
-{
-  "features": {
-    "ghcr.io/awlsomealex/devcontainer-features/iac:0": {}
-  }
-}
-```
 
-To install specific versions:
+---
 
-```json
-{
-  "features": {
-    "ghcr.io/awlsomealex/devcontainer-features/iac:0": {
-      "opentofuVersion": "1.12.6",
-      "terragruntVersion": "1.1.4"
-    }
-  }
-}
-```
-
-The feature supports Ubuntu and RHEL-compatible distributions, including Ubuntu 26.04 and RHEL-compatible major version 10. It supports `amd64` and `arm64` hosts and verifies downloaded releases with their published SHA-256 checksums.
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/AwlsomeAlex/devcontainer-features/blob/main/src/iac/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

@@ -1,0 +1,48 @@
+{
+    "ubuntu-support": {
+        "image": "ubuntu:26.04",
+        "features": {
+            "base": {}
+        }
+    },
+    "rocky-support": {
+    "image": "rockylinux/rockylinux:10",
+        "features": {
+            "base": {}
+        }
+    },
+    "custom-user": {
+        "image": "ubuntu:26.04",
+        "features": {
+            "base": {
+                "username": "johnt",
+                "userUid": "1001",
+                "userGid": "1001",
+                "omzTheme": "robbyrussell"
+            }
+        }
+    },
+    "zsh-without-omz": {
+        "image": "ubuntu:26.04",
+        "features": {
+            "base": {
+                "username": "devcontainer",
+                "userUid": "1001",
+                "userGid": "1001",
+                "installOMZ": false
+            }
+        }
+    },
+    "omz-without-zsh": {
+        "image": "ubuntu:26.04",
+        "features": {
+            "base": {
+                "username": "devcontainer",
+                "userUid": "1001",
+                "userGid": "1001",
+                "installZsh": false,
+                "installOMZ": true
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "base",
+  "version": "0.1.0",
+  "name": "Base",
+  "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/base",
+  "description": "Creates the vscode user, installs common dependencies, configures Oh-My-Zsh",
+  "options": {
+    "username": {
+      "type": "string",
+      "proposals": [
+        "vscode"
+      ],
+      "default": "vscode",
+      "description": "Specify container username, if not vscode."
+    },
+    "userUid": {
+      "type": "string",
+      "proposals": [
+        "1000"
+      ],
+      "default": "1000",
+      "description": "Specify container user's UID, if not 1000"
+    },
+    "userGid": {
+      "type": "string",
+      "proposals": [
+        "1000"
+      ],
+      "default": "1000",
+      "description": "Specify container user's GID, if not 1000"
+    },
+    "installZsh": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to install the ZSH shell and set it as default shell."
+    },
+    "installOMZ": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to install Oh-My-Zsh and configure the user's .zshrc. Requires installZsh."
+    },
+    "omzTheme": {
+      "type": "string",
+      "proposals": [
+        "agnoster"
+      ],
+      "default": "agnoster",
+      "description": "Specify the Oh-My-Zsh theme name to use, if not agnoster."
+    }
+  }
+}

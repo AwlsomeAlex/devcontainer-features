@@ -1,0 +1,26 @@
+{
+  "ubuntu-support": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "kubernetes": {}
+    }
+  },
+  "pinned-versions": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "kubernetes": {
+        "kubectlVersion": "1.35.1",
+        "helmVersion": "4.2.4",
+        "k9sVersion": "0.50.18",
+        "kindVersion": "0.31.0",
+        "minikubeVersion": "1.38.1"
+      }
+    }
+  },
+  "rocky-support": {
+    "image": "rockylinux/rockylinux:10",
+    "features": {
+      "kubernetes": {}
+    }
+  }
+}

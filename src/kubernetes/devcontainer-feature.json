@@ -1,0 +1,45 @@
+{
+  "id": "kubernetes",
+  "version": "0.1.0",
+  "name": "Kubernetes Tools",
+  "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/kubernetes",
+  "description": "Installs kubectl, Helm, k9s, kind, and Minikube.",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/awlsomealex/devcontainer-features/base",
+    "ghcr.io/devcontainers/features/docker-in-docker",
+    "ghcr.io/devcontainers/features/docker-outside-of-docker"
+  ],
+  "options": {
+    "kubectlVersion": {
+      "type": "string",
+      "proposals": ["latest"],
+      "default": "latest",
+      "description": "Specify the kubectl version to install, or latest."
+    },
+    "helmVersion": {
+      "type": "string",
+      "proposals": ["latest", "4.2.4"],
+      "default": "latest",
+      "description": "Specify the Helm version to install, or latest."
+    },
+    "k9sVersion": {
+      "type": "string",
+      "proposals": ["latest", "0.50.18"],
+      "default": "latest",
+      "description": "Specify the k9s version to install, or latest."
+    },
+    "kindVersion": {
+      "type": "string",
+      "proposals": ["latest", "0.31.0"],
+      "default": "latest",
+      "description": "Specify the kind version to install, or latest."
+    },
+    "minikubeVersion": {
+      "type": "string",
+      "proposals": ["latest", "1.38.1"],
+      "default": "latest",
+      "description": "Specify the Minikube version to install, or latest."
+    }
+  }
+}

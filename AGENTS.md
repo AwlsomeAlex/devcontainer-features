@@ -50,6 +50,11 @@ Dev Container Feature option names are camelCase in `devcontainer-feature.json` 
 - `shfmt` → `SHFMT`
 - `opentofuVersion` → `OPENTOFUVERSION`
 - `terragruntVersion` → `TERRAGRUNTVERSION`
+- `kubectlVersion` → `KUBECTLVERSION`
+- `helmVersion` → `HELMVERSION`
+- `k9sVersion` → `K9SVERSION`
+- `kindVersion` → `KINDVERSION`
+- `minikubeVersion` → `MINIKUBEVERSION`
 
 Avoid generic variable collisions with sourced files. In particular, `/etc/os-release` defines `VERSION`; capture a feature option named `VERSION` into a feature-specific variable before sourcing `/etc/os-release`.
 
@@ -105,6 +110,12 @@ The first three use the supported OS package managers. `shfmt` is not assumed to
 **TL;DR:** Installs the latest or pinned OpenTofu and Terragrunt releases from GitHub into `/usr/local/bin`, recommends the HashiCorp HCL and OpenTofu VS Code extensions, and provides checksum verification with amd64/arm64 support on Ubuntu and Rocky/RHEL containers.
 
 IAC uses the `opentofuVersion` option for OpenTofu and `terragruntVersion` for Terragrunt; both default to `latest`. Release archives are selected by host architecture and verified against the tools' published SHA-256 checksums before installation.
+
+### `kubernetes`
+
+**TL;DR:** Installs kubectl, Helm, k9s, kind, and Minikube from their official release sources, with independent latest or pinned versions and amd64/arm64 support on Ubuntu and Rocky/RHEL containers.
+
+Kubernetes tools use independent version options for each tool, defaulting to `latest`. Package prerequisites are installed using the supported Ubuntu/RHEL package-manager branches, and architecture-specific upstream assets are selected for amd64 and arm64 hosts.
 
 ## Testing expectations
 

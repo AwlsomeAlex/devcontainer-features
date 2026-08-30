@@ -123,3 +123,22 @@ Installs the latest or pinned OpenTofu and Terragrunt releases from GitHub into 
     }
 }
 ```
+
+### Kubernetes Tools
+
+Installs kubectl, Helm, k9s, kind, and Minikube from their official release sources. Each tool has an independent version option, defaulting to `latest`, and the feature supports Ubuntu 26.04 and Rocky Linux 10 on amd64 and arm64 hosts.
+
+```jsonc
+{
+    "image": "ubuntu:26.04",
+    "features": {
+        "ghcr.io/awlsomealex/devcontainer-features/kubernetes:0.1": {
+            "kubectlVersion": "latest",
+            "helmVersion": "latest",
+            "k9sVersion": "latest",
+            "kindVersion": "latest",
+            "minikubeVersion": "latest"
+        }
+    }
+}
+```

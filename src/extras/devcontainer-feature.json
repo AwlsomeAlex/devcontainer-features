@@ -4,6 +4,10 @@
   "name": "Extras",
   "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/extras",
   "description": "Installs additional development tools: bubblewrap, iptables, ShellCheck, and shfmt.",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/awlsomealex/devcontainer-features/base"
+  ],
   "options": {
     "shfmt": {
       "type": "string",

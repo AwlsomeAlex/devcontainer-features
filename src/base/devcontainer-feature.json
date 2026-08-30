@@ -4,6 +4,9 @@
   "name": "Base",
   "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/base",
   "description": "Creates the vscode user, installs common dependencies, configures Oh-My-Zsh",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ],
   "options": {
     "username": {
       "type": "string",

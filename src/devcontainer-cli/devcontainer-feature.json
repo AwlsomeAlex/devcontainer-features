@@ -4,6 +4,10 @@
   "name": "Dev Container CLI",
   "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/devcontainer-cli",
   "description": "Installs the Dev Container CLI.",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/awlsomealex/devcontainer-features/base"
+  ],
   "options": {
     "version": {
       "type": "string",

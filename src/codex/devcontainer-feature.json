@@ -1,9 +1,13 @@
 {
   "id": "codex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "name": "OpenAI Codex",
   "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/codex",
   "description": "Installs the OpenAI Codex CLI and VSCode extension",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/awlsomealex/devcontainer-features/base"
+  ],
   "options": {
     "version": {
       "type": "string",

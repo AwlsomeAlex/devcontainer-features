@@ -4,6 +4,10 @@
   "name": "Infrastructure as Code",
   "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/iac",
   "description": "Installs OpenTofu and Terragrunt from their official GitHub releases.",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/awlsomealex/devcontainer-features/base"
+  ],
   "options": {
     "opentofuVersion": {
       "type": "string",

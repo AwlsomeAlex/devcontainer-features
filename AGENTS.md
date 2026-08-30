@@ -26,6 +26,8 @@ Each feature belongs under `src/<feature-name>/` and normally contains:
 - `install.sh`
 - `README.md`
 
+Every feature should declare `installsAfter` for upstream `ghcr.io/devcontainers/features/common-utils`. All features except `base` should also declare `ghcr.io/awlsomealex/devcontainer-features/base`; Base itself must not declare a dependency on itself.
+
 Feature tests belong under `test/<feature-name>/`:
 
 - `scenarios.json` defines the images and feature options.
@@ -127,3 +129,5 @@ Keep documentation aligned with the implementation. Do not claim broad distribut
 ## Change discipline
 
 Preserve unrelated user changes in the worktree. Keep feature-specific logic in the feature rather than adding shared setup back to the project Dockerfile. When adding a feature that replaces Dockerfile logic, identify the remaining Dockerfile-only responsibilities instead of duplicating the feature's setup.
+
+When updating an existing feature, check Git tags for the feature's current version. If a matching tag exists, bump the feature version for the change using the appropriate semantic-version increment; use a patch bump (`x.x.1`) for minor changes unless the change requires a minor or major bump.

@@ -17,6 +17,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     sudo \
     git \
     git-lfs \
+    gnupg2 \
     language-pack-en \
     xz-utils \
     zsh \

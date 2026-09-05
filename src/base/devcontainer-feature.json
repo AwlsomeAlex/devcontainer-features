@@ -1,6 +1,6 @@
 {
   "id": "base",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "Base",
   "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/base",
   "description": "Creates the vscode user, installs common dependencies, configures Oh-My-Zsh",

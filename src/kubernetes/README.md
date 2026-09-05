@@ -1,43 +1,28 @@
-# Kubernetes Tools
 
-Installs `kubectl`, Helm, k9s, kind, and Minikube from their official release sources.
+# Kubernetes Tools (kubernetes)
 
-All tools are installed into `/usr/local/bin`.
+Installs kubectl, Helm, k9s, kind, and Minikube.
+
+## Example Usage
+
+```json
+"features": {
+    "ghcr.io/AwlsomeAlex/devcontainer-features/kubernetes:0": {}
+}
+```
 
 ## Options
 
-The feature exposes an independent version option for each tool. Every option defaults to `latest` and accepts a pinned semantic version:
+| Options Id | Description | Type | Default Value |
+|-----|-----|-----|-----|
+| kubectlVersion | Specify the kubectl version to install, or latest. | string | latest |
+| helmVersion | Specify the Helm version to install, or latest. | string | latest |
+| k9sVersion | Specify the k9s version to install, or latest. | string | latest |
+| kindVersion | Specify the kind version to install, or latest. | string | latest |
+| minikubeVersion | Specify the Minikube version to install, or latest. | string | latest |
 
-- `kubectlVersion`
-- `helmVersion`
-- `k9sVersion`
-- `kindVersion`
-- `minikubeVersion`
 
-## Example
 
-```json
-{
-  "features": {
-    "ghcr.io/awlsomealex/devcontainer-features/kubernetes:0": {}
-  }
-}
-```
+---
 
-To pin versions:
-
-```json
-{
-  "features": {
-    "ghcr.io/awlsomealex/devcontainer-features/kubernetes:0": {
-      "kubectlVersion": "1.35.1",
-      "helmVersion": "4.2.4",
-      "k9sVersion": "0.50.18",
-      "kindVersion": "0.31.0",
-      "minikubeVersion": "1.38.1"
-    }
-  }
-}
-```
-
-The feature supports Ubuntu and RHEL-compatible distributions, including Ubuntu 26.04 and RHEL-compatible major version 10. It supports `amd64` and `arm64` hosts. Helm and k9s downloads are checksum-verified; kubectl, kind, and Minikube are downloaded from their official release endpoints.
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/AwlsomeAlex/devcontainer-features/blob/main/src/kubernetes/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._

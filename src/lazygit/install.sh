@@ -5,7 +5,7 @@ LAZYGIT_VERSION="${VERSION:-latest}"
 
 . /etc/os-release
 
-DEPENDENCIES=('ca-certificates' 'curl' 'tar' 'git' 'git-lfs' 'gnupg2')
+DEPENDENCIES=('ca-certificates' 'curl' 'tar' 'git' 'git-lfs' 'gnupg2' 'gpg')
 
 # Primarily targeting Ubuntu and RHEL (Rocky) for now
 DISTRO_IDS=" ${ID:-} ${ID_LIKE:-} "

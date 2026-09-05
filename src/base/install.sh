@@ -3,7 +3,7 @@ set -euo pipefail
 
 . /etc/os-release
 
-DEPENDENCIES=('ca-certificates' 'curl' 'jq' 'ripgrep' 'sudo' 'git' 'git-lfs' 'gnupg2')
+DEPENDENCIES=('ca-certificates' 'curl' 'jq' 'ripgrep' 'sudo' 'git' 'git-lfs' 'gnupg2' 'gpg')
 LOCALE="en_US.UTF-8"
 
 DEFAULT_SHELL="/bin/bash"

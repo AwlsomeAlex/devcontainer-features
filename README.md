@@ -142,3 +142,19 @@ Installs kubectl, Helm, k9s, kind, and Minikube from their official release sour
     }
 }
 ```
+
+### AWS CLI
+
+Installs AWS CLI v2 at the latest or a pinned version. The latest AWS Systems Manager Session Manager plugin can also be installed with `installSSMPlugin`. The feature targets Ubuntu 26.04 and Rocky Linux 10 on amd64 and arm64.
+
+```jsonc
+{
+    "image": "ubuntu:26.04",
+    "features": {
+        "ghcr.io/awlsomealex/devcontainer-features/aws-cli:0": {
+            "version": "latest",
+            "installSSMPlugin": true
+        }
+    }
+}
+```

@@ -1,0 +1,27 @@
+{
+  "id": "aws-cli",
+  "version": "0.1.0",
+  "name": "AWS CLI",
+  "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/aws-cli",
+  "description": "Installs AWS CLI v2 and optionally the AWS Systems Manager Session Manager plugin.",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/awlsomealex/devcontainer-features/base"
+  ],
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "2.0.30"
+      ],
+      "default": "latest",
+      "description": "Specify the AWS CLI v2 version to install, or latest."
+    },
+    "installSSMPlugin": {
+      "type": "boolean",
+      "default": false,
+      "description": "Install the latest AWS Systems Manager Session Manager plugin."
+    }
+  }
+}

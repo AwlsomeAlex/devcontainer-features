@@ -55,6 +55,7 @@ Dev Container Feature option names are camelCase in `devcontainer-feature.json` 
 - `k9sVersion` → `K9SVERSION`
 - `kindVersion` → `KINDVERSION`
 - `minikubeVersion` → `MINIKUBEVERSION`
+- `installSSMPlugin` → `INSTALLSSMPLUGIN`
 
 Avoid generic variable collisions with sourced files. In particular, `/etc/os-release` defines `VERSION`; capture a feature option named `VERSION` into a feature-specific variable before sourcing `/etc/os-release`.
 
@@ -116,6 +117,12 @@ IAC uses the `opentofuVersion` option for OpenTofu and `terragruntVersion` for T
 **TL;DR:** Installs kubectl, Helm, k9s, kind, and Minikube from their official release sources, with independent latest or pinned versions and amd64/arm64 support on Ubuntu and Rocky/RHEL containers.
 
 Kubernetes tools use independent version options for each tool, defaulting to `latest`. Package prerequisites are installed using the supported Ubuntu/RHEL package-manager branches, and architecture-specific upstream assets are selected for amd64 and arm64 hosts.
+
+### `aws-cli`
+
+**TL;DR:** Installs AWS CLI v2 at the latest or a pinned version, with the latest AWS Systems Manager Session Manager plugin available as an option, for Ubuntu 26.04 and Rocky Linux 10 on amd64 and arm64.
+
+AWS CLI uses the `version` option, which defaults to `latest` and accepts AWS CLI v2 versions in `2.x.y` form. `installSSMPlugin` defaults to `false`; when enabled, the feature uses AWS's architecture-specific latest Debian or RPM package URL. AWS's plugin install instructions name RHEL 8 and 9; Rocky Linux 10 is the repository's supported RHEL-compatible target.
 
 ## Testing expectations
 

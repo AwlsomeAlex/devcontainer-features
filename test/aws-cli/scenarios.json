@@ -1,0 +1,38 @@
+{
+  "ubuntu-support": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "aws-cli": {}
+    }
+  },
+  "pinned-version": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "aws-cli": {
+        "version": "2.0.30"
+      }
+    }
+  },
+  "ssm-plugin": {
+    "image": "ubuntu:26.04",
+    "features": {
+      "aws-cli": {
+        "installSSMPlugin": true
+      }
+    }
+  },
+  "rocky-support": {
+    "image": "rockylinux/rockylinux:10",
+    "features": {
+      "aws-cli": {}
+    }
+  },
+  "rocky-ssm-plugin": {
+    "image": "rockylinux/rockylinux:10",
+    "features": {
+      "aws-cli": {
+        "installSSMPlugin": true
+      }
+    }
+  }
+}

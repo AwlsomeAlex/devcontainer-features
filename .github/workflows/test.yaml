@@ -14,6 +14,7 @@ jobs:
       matrix:
         features:
           - codex
+          - aws-cli
         baseImage:
           - ubuntu:26.04
           - rockylinux/rockylinux:10
@@ -27,12 +28,17 @@ jobs:
         run: devcontainer features test --skip-scenarios -f ${{ matrix.features }} -i ${{ matrix.baseImage }} .
 
   test-scenarios:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runner }}
     continue-on-error: true
     strategy:
       matrix:
-        features:
-          - codex
+        include:
+          - features: codex
+            runner: ubuntu-latest
+          - features: aws-cli
+            runner: ubuntu-latest
+          - features: aws-cli
+            runner: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
 

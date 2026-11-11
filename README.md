@@ -6,6 +6,23 @@ I plan on supporting at least Ubuntu 26.04 and Rocky Linux 10, along with amd64 
 
 ## Contents
 
+### Pi
+
+**TL;DR:** Installs the latest Pi release with its official curl installer for Ubuntu 26.04 and Rocky Linux 10 on amd64 and arm64, with a configurable Node.js version that defaults to the latest Node 26 release.
+
+```jsonc
+{
+    "image": "ubuntu:26.04",
+    "features": {
+        "ghcr.io/awlsomealex/devcontainer-features/pi:0": {
+            "nodejsVersion": "latest"
+        }
+    }
+}
+```
+
+Pi is installed in `/usr/local/share/pi` and available as `pi`. The `nodejsVersion` option defaults to `latest` on Node 26; pin a stable semver of 22.19.0 or newer, with or without a leading `v`. Configure a model provider in Pi before sending it tasks.
+
 ### `base`
 
 Creates the expected `vscode` user, installs some commonly required packages like `ca-credentials`, `curl`, `zsh`, etc. and installs Oh-My-Zshrc. The username, whether OMZ, and which theme it uses is configurable. This is similar to `common-utils`. I will try my best not to make this a HARD dependency of my units to keep it supported with `common-utils`.

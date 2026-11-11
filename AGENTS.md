@@ -56,6 +56,7 @@ Dev Container Feature option names are camelCase in `devcontainer-feature.json` 
 - `kindVersion` → `KINDVERSION`
 - `minikubeVersion` → `MINIKUBEVERSION`
 - `installSSMPlugin` → `INSTALLSSMPLUGIN`
+- `nodejsVersion` → `NODEJSVERSION`
 
 Avoid generic variable collisions with sourced files. In particular, `/etc/os-release` defines `VERSION`; capture a feature option named `VERSION` into a feature-specific variable before sourcing `/etc/os-release`.
 
@@ -123,6 +124,12 @@ Kubernetes tools use independent version options for each tool, defaulting to `l
 **TL;DR:** Installs AWS CLI v2 at the latest or a pinned version, with the latest AWS Systems Manager Session Manager plugin available as an option, for Ubuntu 26.04 and Rocky Linux 10 on amd64 and arm64.
 
 AWS CLI uses the `version` option, which defaults to `latest` and accepts AWS CLI v2 versions in `2.x.y` form. `installSSMPlugin` defaults to `false`; when enabled, the feature uses AWS's architecture-specific latest Debian or RPM package URL. AWS's plugin install instructions name RHEL 8 and 9; Rocky Linux 10 is the repository's supported RHEL-compatible target.
+
+### `pi`
+
+**TL;DR:** Installs the latest Pi release with its official curl installer for Ubuntu 26.04 and Rocky Linux 10 on amd64 and arm64, with a configurable Node.js version that defaults to the latest Node 26 release.
+
+Pi is installed in `/usr/local/share/pi` and exposed as `/usr/local/bin/pi`. Its `nodejsVersion` option defaults to `latest` (the latest Node.js 26 release); pinned versions must be 22.19.0 or newer.
 
 ## Testing expectations
 

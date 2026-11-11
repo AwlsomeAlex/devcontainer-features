@@ -1,0 +1,22 @@
+{
+    "ubuntu-support": {
+        "image": "ubuntu:26.04",
+        "features": {
+            "pi": {}
+        }
+    },
+    "rocky-support": {
+        "image": "rockylinux/rockylinux:10",
+        "features": {
+            "pi": {}
+        }
+    },
+    "pinned-nodejs-version": {
+        "image": "ubuntu:26.04",
+        "features": {
+            "pi": {
+                "nodejsVersion": "26.13.0"
+            }
+        }
+    }
+}

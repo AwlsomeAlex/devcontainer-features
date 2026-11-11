@@ -1,0 +1,22 @@
+{
+  "id": "pi",
+  "version": "0.1.0",
+  "name": "Pi",
+  "documentationURL": "https://github.com/awlsomealex/devcontainer-features/tree/main/src/pi",
+  "description": "Installs the Pi coding agent with its official installer.",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/awlsomealex/devcontainer-features/base"
+  ],
+  "options": {
+    "nodejsVersion": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "26.13.0"
+      ],
+      "default": "latest",
+      "description": "Node.js version to install. latest selects the latest Node.js 26 release; pinned versions must be 22.19.0 or newer."
+    }
+  }
+}
